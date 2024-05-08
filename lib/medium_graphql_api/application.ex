@@ -10,7 +10,8 @@ defmodule MediumGraphqlApi.Application do
     children = [
       MediumGraphqlApiWeb.Telemetry,
       MediumGraphqlApi.Repo,
-      {DNSCluster, query: Application.get_env(:medium_graphql_api, :dns_cluster_query) || :ignore},
+      {DNSCluster,
+       query: Application.get_env(:medium_graphql_api, :dns_cluster_query) || :ignore},
       {Phoenix.PubSub, name: MediumGraphqlApi.PubSub},
       # Start the Finch HTTP client for sending emails
       {Finch, name: MediumGraphqlApi.Finch},
