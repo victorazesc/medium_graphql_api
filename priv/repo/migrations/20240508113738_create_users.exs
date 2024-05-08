@@ -6,10 +6,12 @@ defmodule MediumGraphqlApi.Repo.Migrations.CreateUsers do
       add :first_name, :string
       add :last_name, :string
       add :email, :string
-      add :password_hasg, :string
+      add :password_hash, :string
       add :role, :string
 
       timestamps(type: :utc_datetime)
     end
+
+      create(unique_index(:users, [:email]))
   end
 end
