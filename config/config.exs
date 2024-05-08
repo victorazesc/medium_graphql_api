@@ -17,7 +17,8 @@ config :medium_graphql_api, MediumGraphqlApiWeb.Endpoint,
   adapter: Bandit.PhoenixAdapter,
   render_errors: [
     formats: [json: MediumGraphqlApiWeb.ErrorJSON],
-    layout: false
+    layout: false,
+    accepts: ~w(json)
   ],
   pubsub_server: MediumGraphqlApi.PubSub,
   live_view: [signing_salt: "OK/5g2TQ"]
