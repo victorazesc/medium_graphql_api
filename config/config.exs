@@ -61,6 +61,12 @@ config :logger, :console,
 # Use Jason for JSON parsing in Phoenix
 config :phoenix, :json_library, Jason
 
+# Cofig guardian
+config :medium_graphql_api, MediumGraphqlApi.Guardian,
+  issuer: "medium_graphql_api",
+  # put the result of the mix command above here
+  secret_key: "mCMxTZinqUNwKHZYpGjaIAzF8iV96VKtEjK9zBLKZa32E9/hcqDsXlJpE3lcK+7K"
+
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
 import_config "#{config_env()}.exs"
